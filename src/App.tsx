@@ -19,7 +19,7 @@ function App() {
       <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
-            <main className="w-full h-screen flex flex-col gap-7 justify-center items-center bg-gradient-to-bl from-[#0FC397] via-[#4A8CC4] to-[#8D4EF7] text-white">
+            <main className="pt-36 w-full h-screen flex flex-col gap-7 items-center bg-gradient-to-bl from-[#0FC397] via-[#4A8CC4] to-[#8D4EF7] text-white">
               <Heading />
               <div className="flex gap-4">
                 <WalletMultiButton />

@@ -14,7 +14,7 @@ const Airdrop = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col sm:flex-row gap-2">
       <input
         type="text"
         placeholder="Enter Amount"
