@@ -1,6 +1,7 @@
 import {
   ConnectionProvider,
   WalletProvider,
+  useWallet,
 } from "@solana/wallet-adapter-react";
 import {
   WalletModalProvider,
@@ -12,6 +13,7 @@ import Airdrop from "./components/Airdrop";
 import Heading from "./components/Heading";
 
 function App() {
+  const { connected } = useWallet();
   return (
     <>
       <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
@@ -21,7 +23,7 @@ function App() {
               <Heading />
               <div className="flex gap-4">
                 <WalletMultiButton />
-                <WalletDisconnectButton />
+                {connected && <WalletDisconnectButton />}
               </div>
               <Airdrop />
             </main>
