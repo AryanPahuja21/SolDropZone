@@ -1,5 +1,6 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { useState } from "react";
+import SuccessDialog from "./SuccessDialog";
 
 const isFloat = (value: string) => {
   const parsed = parseFloat(value);
@@ -22,6 +23,7 @@ const Airdrop = () => {
         setError("Please enter a valid amount to send an airdrop");
         return;
       }
+      setError("");
       console.log(
         "Sending airdrop of",
         parseFloat(amount) * 1000000000,
@@ -29,7 +31,6 @@ const Airdrop = () => {
         wallet.publicKey
       );
       // await connection.requestAirdrop(wallet.publicKey!, amount * 1000000000);
-      alert("Airdrop sent!");
     } else {
       setError("Please connect your wallet to send an airdrop");
     }
@@ -53,6 +54,7 @@ const Airdrop = () => {
         </button>
       </div>
       {error && <p className="text-red-300 font-semibold">{error}</p>}
+      <SuccessDialog />
     </>
   );
 };
