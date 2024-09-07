@@ -56,7 +56,7 @@ const Airdrop = () => {
         </button>
       </div>
       {error && <p className="text-red-300 font-semibold">{error}</p>}
-      {success && <SuccessDialog />}
+      {success && <SuccessDialog setSuccess={setSuccess} />}
     </>
   );
 };
